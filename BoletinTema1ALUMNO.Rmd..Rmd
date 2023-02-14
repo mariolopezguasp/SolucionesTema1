@@ -44,14 +44,18 @@ library(knitr)
 options(width = 100)
 # Opciones generales chunks
 
-## PARA GENERAR SOLO LOS ENUNCIADO include=FALSE
-#opts_chunk$set(echo=F,message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = './figure/', include=FALSE)
+## PARA GENERAR SOLO LOS ENUNCIADO 
+include=FALSE
 
-## PARA Incluir la soluciones SOLO LOS ENUNCIADO include=TRUE
+opts_chunk$set(echo=F,message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = './figure/', include=FALSE)
+
+## PARA Incluir la soluciones SOLO LOS ENUNCIADO 
+include=TRUE
 opts_chunk$set(echo=T,message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = './figure/', include=TRUE)
 
 
-#options(xtable.type = 'html')
+#
+options(xtable.type = 'html')
 knit_hooks$set(inline = function(x) {
   
   if(is.numeric(x)) {
@@ -60,7 +64,7 @@ knit_hooks$set(inline = function(x) {
     paste(as.character(x), collapse = ', ')
   }
 })
-#knit_hooks$set(plot = knitr:::hook_plot_html)
+knit_hooks$set(plot = knitr:::hook_plot_html)
 ```
 
 ```{r,echo=FALSE}
@@ -79,7 +83,7 @@ package.check <- lapply(packages, FUN = function(x) {
 })
 
 #verify they are loaded
-#search()
+search()
 
 ```
 
@@ -92,23 +96,16 @@ b.  Usa las funciones **dim, head, tail, str** para una primera visión de los c
 c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
 
 ```{r}
+help(MASS)
+help(Animals2)
 
+dim(Animals2)
+head(Animals2)
+tail(Animals2)
+str(Animals2)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+colnames(Animals2)
+row.names(Animals2)
 ```
 
 d.  Usa la función **intersect** y almacena en la variable *commonAnimals* los aminales que aparezcan en ambos conjuntos
