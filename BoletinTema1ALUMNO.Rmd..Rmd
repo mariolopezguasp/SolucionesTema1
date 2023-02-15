@@ -188,32 +188,24 @@ qqPlot(log_brain_animals2, main = "Animals2")
     d.  Utiliza la función **summary**, sobre **cabbages** y **Chile** y observa como, además de otros estadísticos, también devuelve el número de valores perdidos de cada variable.
 
 ```{r}
+head(cabbages)
+summary(cabbages)
+str(cabbages)
 
+sum(is.na(cabbages$Weight))
+sum(is.na(cabbages$Head))
+sum(is.na(cabbages$Leaf))
 
+head(Chile)
+summary(Chile)
+str(Chile)
 
+sum(is.na(Chile$income))
+sum(is.na(Chile$savings))
+sum(is.na(Chile$expenditure))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+summary(cabbages)
+summary(Chile)
 
 ```
 
